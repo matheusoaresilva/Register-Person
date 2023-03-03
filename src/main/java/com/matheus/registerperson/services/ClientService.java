@@ -23,4 +23,17 @@ public class ClientService {
         Client savedClient = repository.save(client);
         return savedClient;
     }
+
+    public Client update(Long id, Client client){
+        Client existingClient = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Client not found with id: " + id));
+        existingClient.setName(client.getName());
+        existingClient.setCpf(client.getCpf());
+        existingClient.setIncome(client.getIncome());
+        existingClient.setBirthDate(client.getBirthDate());
+        existingClient.setChildren(client.getChildren());
+
+        Client updatedClient = repository.save(existingClient);
+        return updatedClient;
+    }
 }
