@@ -1,4 +1,4 @@
-package com.matheus.registerperson.services;
+package com.matheus.registerperson.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException{
 
