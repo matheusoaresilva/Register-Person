@@ -51,6 +51,16 @@ public class ClientResource {
         return ResponseEntity.created(uri).body(insertedClient);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client client){
+        try{
+            Client updatedClient = service.update(id, client);
+            return ResponseEntity.ok(updatedClient);
+        }catch (ResourceNotFoundException e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
             service.delete(id);
