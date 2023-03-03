@@ -1,15 +1,27 @@
 package com.matheus.registerperson.entities;
 
+import jakarta.persistence.*;
+
 import java.time.Instant;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_client")
 public class Client {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String name;
+    @Column
     private String cpf;
+    @Column
     private Double income;
+    @Column
     private Instant birthDate;
+    @Column
     private Integer children;
 
     public Client() {
