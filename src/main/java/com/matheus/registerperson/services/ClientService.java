@@ -64,4 +64,9 @@ public class ClientService {
         Page<Client> clients = repository.findAll(request);
         return clients;
     }
+
+
+    public Client findByCpf(String cpf) {
+        return repository.findByCpf(cpf);
+    }
 }
