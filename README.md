@@ -8,6 +8,11 @@ Este é um projeto de uma API RESTful para um CRUD completo de clientes, contend
 * Atualizar cliente
 * Deletar cliente
 
+![Diagrama UML](https://github.com/matheusoaresilva/Register-Person/blob/main/img/diagrama-uml.jpg)
+
+
+
+
 ## Tecnologias utilizadas
 
 * Spring Boot 3.0.3
