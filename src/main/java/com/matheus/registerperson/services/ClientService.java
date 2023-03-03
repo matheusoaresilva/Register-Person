@@ -6,6 +6,8 @@ import com.matheus.registerperson.services.exceptions.ResourceNotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -51,5 +53,10 @@ public class ClientService {
             throw new ResourceNotFoundException("Id not found: " + id);
         }
 
+    }
+
+    public Page<Client> findAllPage(PageRequest request){
+        Page<Client> clients = repository.findAll(request);
+        return clients;
     }
 }
